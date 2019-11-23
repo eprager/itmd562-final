@@ -1,0 +1,137 @@
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: black;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  height: 240px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/**************************************/
+@media (min-width: 700px) {
+  .wrapper {
+    overflow: hidden;
+  }
+  .wrapper > * {
+    float: left;
+    padding: 2em 2em;
+  }
+}
+
+@media (min-width: 700px) {
+  .contacts {
+    width: 30%;
+    min-height: 620px;
+  }
+}
+
+@media (min-width: 700px) {
+  .form {
+    width: 70%;
+  }
+}
+
+form p {
+  float: left;
+  width: 33.3%;
+}
+form p:last-child {
+  clear: both;
+  width: 100%;
+}
+
+
+/**************************************/
+body {
+  padding: 1rem;
+}
+
+textarea { resize: none; }
+
+.wrapper {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+.wrapper > * {
+  padding: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.form {
+  background: #fff;
+}
+
+form label {
+  display: block;
+}
+
+button,
+input,
+textarea {
+  padding: 1em;
+}
+
+button {
+  background: gainsboro;
+  width: 100%;
+  border: 0;
+}
+button:hover, button:focus {
+  background:  #78EEE2;
+  outline: 0;
+}
+
+.contain {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+@media (min-width: 600px) {
+  .contain {
+    padding: 0;
+  }
+}
+
+h3,
+ul {
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  color: #78EEE2;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid #78EEE2;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border: 1px solid gainsboro;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
