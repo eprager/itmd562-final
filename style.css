@@ -19,6 +19,30 @@
   box-sizing: border-box;
 }
 
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  display: inline;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 5px solid black;
+}
+
+img {
+  width: 19.7%;
+  height: auto;
+  text-align: center;
+}
+
 /**************************************/
 @media (min-width: 700px) {
   .wrapper {
@@ -77,9 +101,7 @@ ul {
   background: #fff;
 }
 
-form label {
-  display: block;
-}
+
 
 button,
 input,
@@ -93,7 +115,7 @@ button {
   border: 0;
 }
 button:hover, button:focus {
-  background:  #78EEE2;
+  background:  deepskyblue;
   outline: 0;
 }
 
@@ -116,12 +138,12 @@ ul {
 
 h3 {
   margin-bottom: 1rem;
-  color: #78EEE2;
+  color: deepskyblue;
 }
 
 input:focus,
 textarea:focus {
-  outline: 3px solid #78EEE2;
+  outline: 3px solid deepskyblue;
 }
 
 input,
