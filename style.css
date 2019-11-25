@@ -1,5 +1,3 @@
-
-
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -80,6 +78,7 @@ form p:last-child {
 /**************************************/
 body {
   padding: 1rem;
+  font-family: 'Palanquin', sans-serif;
 }
 
 textarea { resize: none; }
@@ -101,8 +100,6 @@ ul {
   background: #fff;
 }
 
-
-
 button,
 input,
 textarea {
@@ -113,6 +110,7 @@ button {
   background: gainsboro;
   width: 100%;
   border: 0;
+  font-family: 'Palanquin Dark', sans-serif;
 }
 button:hover, button:focus {
   background:  deepskyblue;
@@ -131,14 +129,15 @@ button:hover, button:focus {
   }
 }
 
-h3,
+h1,
 ul {
   margin: 0;
 }
 
-h3 {
+h1 {
   margin-bottom: 1rem;
   color: deepskyblue;
+  font-family: 'Bebas Neue', cursive;
 }
 
 input:focus,
