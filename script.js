@@ -7,5 +7,6 @@ document.addEventListener("DOMContentLoaded", function(){
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = days[d.getDay()];
   var today = day + ", " + month + " " + date + ", " + year;
-  document.getElementById("thedate").innerHTML = today;
+  document.getElementById("thedateTitle").innerHTML = today;
+  document.getElementById("thedateHeading").innerHTML = today;
 });

@@ -24,6 +24,18 @@ h1 {
   font-family: 'Bebas Neue', cursive;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Bad Script', cursive;
+}
+
+h1 .heading {
+  color: black;
+}
+
 h3 {
   text-align: right;
 }
@@ -47,8 +59,8 @@ a:hover, a:active {
 }
 
 .history {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 /**************************************/
