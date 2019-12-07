@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
-mongoose.connect('mongodb+srv://cbeck3:' + process.env.MONGO_ATLAS_PW +
-    '@mycluster-akj1d.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://admin:' + process.env.MONGO_ATLAS_PW +
+    '@emma-pixne.gcp.mongodb.net/test?retryWrites=true&w=majority',
     {
         useUnifiedTopology: true,
         useNewUrlParser: true
