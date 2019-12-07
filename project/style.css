@@ -1,0 +1,159 @@
+/**************************************/
+/* Basics */
+body {
+  padding: 1rem;
+  font-family: 'Palanquin', sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  color: deepskyblue;
+  font-family: 'Bebas Neue', cursive;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Bebas Neue', cursive;
+  color: gainsboro;
+
+  width: 100%;  
+  border-bottom: 1px solid gainsboro; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+}
+
+h2 span { 
+  background:#fff; 
+  padding:0 10px; 
+}
+
+h1 .heading {
+  color: black;
+}
+
+h3 {
+  text-align: right;
+}
+
+img {
+  width: 19.5%;
+  height: auto;
+  text-align: center;
+}
+
+a:link, a:visited {
+	color: deepskyblue;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  color:  hotpink;
+  text-decoration: none;
+}
+
+.history {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/**************************************/
+/* Form */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  display: inline;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 5px solid black;
+}
+
+form p {
+  float: left;
+  width: 33.3%;
+}
+form p:last-child {
+  clear: both;
+  width: 100%;
+}
+
+/**************************************/
+/* Text Boxes & Button */
+* {
+  box-sizing: border-box;
+}
+
+textarea { 
+  resize: none; 
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid deepskyblue;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border: 1px solid gainsboro;
+}
+
+button,
+input,
+textarea {
+  padding: 1em;
+}
+
+button {
+  background: gainsboro;
+  width: 100%;
+  border: 0;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+button:hover, button:focus {
+  background:  deepskyblue;
+  outline: 0;
+}
+
+/**************************************/
+/* Different Screen Sizes */
+
+@media (min-width: 700px) {
+  .form {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+  }
+
+  h3 {
+    margin-right: 15%;
+  }
+}

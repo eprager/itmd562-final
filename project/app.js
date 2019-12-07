@@ -4,8 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const productRoutes = require('./api/routes/products');
-const orderRoutes = require('./api/routes/orders');
+const journalRoutes = require('./api/routes/journals');
 
 mongoose.connect('mongodb+srv://admin:' + process.env.MONGO_ATLAS_PW +
     '@emma-pixne.gcp.mongodb.net/test?retryWrites=true&w=majority',
@@ -40,12 +39,11 @@ app.use('/images', express.static(__dirname + '/images'));
 app.use('/scripts', express.static(__dirname + '/scripts'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html'); 
+    res.sendFile(__dirname + '/index.html');
 });
 
 // Routes which should handle requests
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+app.use('/journals', journalRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');

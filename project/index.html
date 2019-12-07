@@ -1,53 +1,75 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title id="thedateTitle"></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="images/icon.png" type="image/ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Palanquin:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <h3><a href="history.html" onclick="displayAllProducts()">JOURNAL HISTORY</a></h3>
+    <div class="form">
+      <h1 id="thedateHeading"></h1>
 
-    <head>
-        <title>Order Page</title>
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="./scripts/script.js"></script>
-        <style>
-            table, th, td {
-                border: 1px solid black;
-            }
-        </style>
-    </head>
         
-    <body>
-    
-        <h2>Order Entry</h2>
-
-        <p>Please select a product and a quantity below</p>
-        <form id="prodSelect" action="#">
-            Product ID: 
-            <input type="text" name="ProductID" id="ProductID"><br><br>
-            <input type="button" value="Submit" onclick="displaySpecificProduct();"><br>
-        </form>
-        
-        <br><br>
-        
-        <form id="prodCreate" action="#">
-            Product Name: <input placeholder="Name" type="text" id="prodName"> <br>
-            Product Price: <input placeholder="0.00" type="number" id="prodPrice"> <br><br>
-            <input type="button" value="Create Product" onclick="postProduct();"><br>
-        </form>
-        
-        <br><br>
-
-        <button id="btn" onclick="displayAllProducts()">Display All Products</button><br>
-        <table style="width: 100%">
-            <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>ID</th>
-                    </tr>
-            </thead>
-            <tbody id="tbody">
-            </tbody>
-        </table>
-        <p id="here"></p>
-
-    </body>
-    
+    </form>
+      <form id="prodCreate" action="#">
+      <p>
+        <label for="">What happened today?</label>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+      </p>
+      <p>
+        <label for="">What challenges did I face today?</label>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+      </p>
+      <p>
+        <label for="">How did I take care of myself today?</label>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+      </p>
+      <p>
+        <label for="">What am I grateful for?</label>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+      </p>
+      <p>
+        <label for="">Do I have any other thoughts about today?</label>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Example: How much money did I spend today?"></textarea>
+      </p>
+      <p>
+        <label for="">What goals do I have for tomorrow?</label>
+        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+      </p>
+      <group class="inline-radio">
+        <p>
+          <label>
+            <input type="radio" name="mood" value="bad">
+            <img src="images/bad.png" alt="bad"/>
+          </label>
+          <label>
+            <input type="radio" name="mood" value="fine"> 
+            <img src="images/fine.png" alt="fine"/>
+          </label>    
+          <label>
+            <input type="radio" name="mood" value="okay">
+            <img src="images/okay.png" alt="okay"/>
+          </label>       
+          <label>
+            <input type="radio" name="mood" value="good"> 
+            <img src="images/good.png" alt="good"/>
+          </label>  
+          <label>
+            <input type="radio" name="mood" value="great">
+            <img src="images/great.png" alt="great"/>
+          </label>         
+        </p>
+      </group>
+      <p>
+        <button onclick="postProduct();">Submit Today's Journal</button>
+      </p>
+    </form>   
+  </body>
 </html>

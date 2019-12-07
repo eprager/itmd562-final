@@ -12,10 +12,13 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
-    <h3><a href="history.html">JOURNAL HISTORY</a></h3>
+    <h3><a href="history.html" onclick="displayAllProducts()">JOURNAL HISTORY</a></h3>
     <div class="form">
       <h1 id="thedateHeading"></h1>
-      <form action="">
+
+        
+    </form>
+      <form id="prodCreate" action="#">
       <p>
         <label for="">What happened today?</label>
         <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
@@ -65,7 +68,7 @@
         </p>
       </group>
       <p>
-        <button>Submit Today's Journal</button>
+        <button onclick="postProduct();">Submit Today's Journal</button>
       </p>
     </form>   
   </body>
