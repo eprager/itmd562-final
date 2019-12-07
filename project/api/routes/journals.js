@@ -2,22 +2,22 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-const Product = require('../models/journal_model');
+const Journal = require('../models/journal_model');
 
 router.get('/', (req, res, next) => {
-    Product.find()
+    Journal.find()
         // .select('_id name price')
         .select('-__v')
         .exec()
         .then(docs => {
             const response = {
                 count: docs.length,
-                products: docs.map(doc => {
+                journals: docs.map(doc => {
                     return {
-                        product: doc,
+                        journal: doc,
                         request: {
                             type: "GET",
-                            url: "http://localhost:3000/products/" + doc._id
+                            url: "http://localhost:3000/journals/" + doc._id
                         }
                     }
                 })
@@ -39,24 +39,35 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    const product = new Product({
+    const journal = new Journal({
         _id: new mongoose.Types.ObjectId(),
-        name: req.body.name,
-        price: req.body.price
+        p1: req.body.p1,
+        p2: req.body.p2,
+        p3: req.body.p3,
+        p4: req.body.p4,
+        p5: req.body.p5,
+        p6: req.body.p6,
+        mood: req.body.mood,
+        date: req.body.date
     });
-    product
+    journal
         .save()
         .then(result => {
             res.status(201).json({
-                message: 'Created product successfully',
-                createdProduct: {
-                    name: result.name,
-                    price: result.price,
+                message: 'Created journal successfully',
+                createdJournal: {
+                    p1: result.p1,
+                    p2: result.p2,
+                    p3: result.p3,
+                    p4: result.p4,
+                    p5: result.p5,
+                    p6: result.p6,
+                    mood: result.mood,
                     _id: result.id
                 },
                 request: {
                     type: "GET",
-                    url: "http://localhost:3000/products/" + result._id
+                    url: "http://localhost:3000/journals/" + result._id
                 }
             });
         })
@@ -68,18 +79,18 @@ router.post('/', (req, res, next) => {
         });
 });
 
-router.get('/:productID', (req, res, next) => {
-    const id = req.params.productID;
-    Product.findById(id)
+router.get('/:journalID', (req, res, next) => {
+    const id = req.params.journalID;
+    Journal.findById(id)
         .select('-__v')
         .exec()
         .then(doc => {
             res.status(200).json({
-                product: doc,
+                journal: doc,
                 request: {
                     type: 'GET',
-                    description: 'Get all products',
-                    url: 'http://localhost:3000/products'
+                    description: 'Get all journals',
+                    url: 'http://localhost:3000/journals'
                 }
             });
         })
@@ -89,20 +100,20 @@ router.get('/:productID', (req, res, next) => {
         });
 });
 
-router.patch('/:productID', (req, res, next) => {
-    const id = req.params.productID;
+router.patch('/:journalID', (req, res, next) => {
+    const id = req.params.journalID;
     const updateOps = {};
     for (const ops of req.body) {
         updateOps[ops.propName] = ops.value;
     }
-    Product.updateOne({ _id: id}, {$set: updateOps })
+    Journal.updateOne({ _id: id}, {$set: updateOps })
         .exec()
         .then(result => {
             res.status(200).json({
-                message: 'Product updated',
+                message: 'Journal updated',
                 request: {
                     type: 'GET',
-                    url: 'http://localhost:3000/products/' + id
+                    url: 'http://localhost:3000/journals/' + id
                 }
             });
         })
@@ -112,17 +123,17 @@ router.patch('/:productID', (req, res, next) => {
         });
 });
 
-router.delete('/:productID', (req, res, next) => {
-    const id = req.params.productID;
-    Product.deleteOne({ _id: id})
+router.delete('/:journalID', (req, res, next) => {
+    const id = req.params.journalID;
+    Journal.deleteOne({ _id: id})
         .exec()
         .then(result => {
             res.status(200).json({
-                message: 'Product deleted',
+                message: 'Journal deleted',
                 request: {
                     type: 'POST',
-                    url: 'http://localhost:3000/products',
-                    body: { name: 'String', price: 'Number' }
+                    url: 'http://localhost:3000/journals',
+                    body: { _id: id }
                 }
             });
         })

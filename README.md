@@ -10,6 +10,8 @@ See PDF description for app functionaility walkthrough.
 
 Clone/download the repository.  GitHub pages displays the UI, but functioning code must run locally to connect to database.
 
+Run using: `` npm start ``
+
 Prompt:
 
 * Two HTML pages that are styled from one or multiple CSS files. 

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title id="thedateTitle"></title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/date.js"></script>
     <link rel="shortcut icon" href="images/icon.png" type="image/ico"/>
     <link href="https://fonts.googleapis.com/css?family=Palanquin:300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap" rel="stylesheet">
@@ -12,63 +13,43 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
-    <h3><a href="history.html" onclick="displayAllProducts()">JOURNAL HISTORY</a></h3>
+    <h3><a href="history.html">JOURNAL HISTORY</a></h3>
     <div class="form">
       <h1 id="thedateHeading"></h1>
 
         
     </form>
-      <form id="prodCreate" action="#">
+      <form id="journalCreate" action="#">
       <p>
         <label for="">What happened today?</label>
-        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+        <textarea name="" id="p1" cols="30" rows="7" placeholder="Type here . . ."></textarea>
       </p>
       <p>
         <label for="">What challenges did I face today?</label>
-        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+        <textarea name="" id="p2" cols="30" rows="7" placeholder="Type here . . ."></textarea>
       </p>
       <p>
         <label for="">How did I take care of myself today?</label>
-        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+        <textarea name="" id="p3" cols="30" rows="7" placeholder="Type here . . ."></textarea>
       </p>
       <p>
         <label for="">What am I grateful for?</label>
-        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+        <textarea name="" id="p4" cols="30" rows="7" placeholder="Type here . . ."></textarea>
       </p>
       <p>
         <label for="">Do I have any other thoughts about today?</label>
-        <textarea name="" id="" cols="30" rows="7" placeholder="Example: How much money did I spend today?"></textarea>
+        <textarea name="" id="p5" cols="30" rows="7" placeholder="Example: How much money did I spend today?"></textarea>
       </p>
       <p>
         <label for="">What goals do I have for tomorrow?</label>
-        <textarea name="" id="" cols="30" rows="7" placeholder="Type here . . ."></textarea>
+        <textarea name="" id="p6" cols="30" rows="7" placeholder="Type here . . ."></textarea>
       </p>
-      <group class="inline-radio">
-        <p>
-          <label>
-            <input type="radio" name="mood" value="bad">
-            <img src="images/bad.png" alt="bad"/>
-          </label>
-          <label>
-            <input type="radio" name="mood" value="fine"> 
-            <img src="images/fine.png" alt="fine"/>
-          </label>    
-          <label>
-            <input type="radio" name="mood" value="okay">
-            <img src="images/okay.png" alt="okay"/>
-          </label>       
-          <label>
-            <input type="radio" name="mood" value="good"> 
-            <img src="images/good.png" alt="good"/>
-          </label>  
-          <label>
-            <input type="radio" name="mood" value="great">
-            <img src="images/great.png" alt="great"/>
-          </label>         
-        </p>
-      </group>
       <p>
-        <button onclick="postProduct();">Submit Today's Journal</button>
+          <label for="">Mood</label>
+          <textarea name="" id="mood" cols="10" rows="1" placeholder="great / good / okay / fine / bad"></textarea>
+      </p>
+      <p>
+        <button onclick="postJournal();">Submit Today's Journal</button>
       </p>
     </form>   
   </body>
