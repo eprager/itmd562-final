@@ -5,9 +5,10 @@
 ### Illinois Institute of Technology
 
 Journaling web app
-Due by 11:59pm CST, Saturday 12/7/2019
 
 See PDF description for app functionaility walkthrough.
+
+Clone/download the repository.  GitHub pages displays the UI, but functioning code must run locally to connect to database.
 
 Prompt:
 
