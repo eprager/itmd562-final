@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Order Page</title>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./scripts/script.js"></script>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+        
+    <body>
+    
+        <h2>Order Entry</h2>
+
+        <p>Please select a product and a quantity below</p>
+        <form id="prodSelect" action="#">
+            Product ID: 
+            <input type="text" name="ProductID" id="ProductID"><br><br>
+            <input type="button" value="Submit" onclick="displaySpecificProduct();"><br>
+        </form>
+        
+        <br><br>
+        
+        <form id="prodCreate" action="#">
+            Product Name: <input placeholder="Name" type="text" id="prodName"> <br>
+            Product Price: <input placeholder="0.00" type="number" id="prodPrice"> <br><br>
+            <input type="button" value="Create Product" onclick="postProduct();"><br>
+        </form>
+        
+        <br><br>
+
+        <button id="btn" onclick="displayAllProducts()">Display All Products</button><br>
+        <table style="width: 100%">
+            <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>ID</th>
+                    </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <p id="here"></p>
+
+    </body>
+    
+</html>
